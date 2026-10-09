@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Submission Received | Securities and Exchange Commission</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary-darker:#162e51; --primary-dark:#205493; --primary:#005ea2; --primary-vivid:#0050d8;
+    --primary-light:#aecbe3; --primary-lighter:#e1eef9; --accent-cool:#00bde3; --accent-cool-lighter:#e7fafe;
+    --gray-5:#f0f0f0; --gray-10:#e6e6e6; --gray-30:#adadad; --gray-50:#757575; --gray-70:#454545;
+    --gold:#ffbe2e; --success:#00a91c; --white:#ffffff; --ink:#1b1b1b;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'Public Sans',Arial,sans-serif;color:var(--ink);background:var(--white);}
+  h1,h2,h3{font-family:'Merriweather',Georgia,serif;}
+  .gov-banner{background:var(--gray-5);border-bottom:1px solid var(--gray-10);font-size:8px;padding:3px 0;}
+  .gov-banner-inner{max-width:150px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:8px;}
+  .gov-banner img.flag-icon{width:16px;height:auto;}
+ .site-logo {width: 150px;height: auto;} 
+  nav.primary-nav{background:var(--primary-darker);}
+  .primary-nav-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;padding:0 16px;}
+  .primary-nav-inner a{color:#fff;text-decoration:none;font-size:13.5px;font-weight:600;padding:14px 16px;display:inline-block;border-bottom:3px solid transparent;}
+  .primary-nav-inner a:hover{background:var(--primary-dark);}
+  .primary-nav-inner a.active{border-bottom:3px solid var(--gold);background:var(--primary-dark);}
+
+  main{max-width:720px;margin:0 auto;padding:60px 20px 70px;text-align:center;}
+  .success-icon{width:84px;height:84px;margin:0 auto 22px;border-radius:50%;background:#eafbee;border:3px solid var(--success);display:flex;align-items:center;justify-content:center;}
+  .success-icon svg{width:44px;height:44px;color:var(--success);}
+  main h2{font-size:28px;color:var(--primary-darker);margin:0 0 10px;}
+  main > p.sub{font-size:15px;color:var(--gray-70);max-width:520px;margin:0 auto 34px;}
+
+  .receipt-card{border:1px solid var(--gray-10);text-align:left;box-shadow:0 2px 14px rgba(0,0,0,0.06);}
+  .receipt-head{background:var(--primary-darker);color:#fff;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+  .receipt-head h3{margin:0;font-size:15px;}
+  .receipt-head .ref{font-family:monospace;font-size:14px;background:rgba(255,255,255,0.15);padding:4px 10px;border-radius:4px;}
+  .receipt-body{padding:26px 24px;display:flex;gap:24px;flex-wrap:wrap;}
+
+  .doc-preview{
+    width:140px;height:160px;flex-shrink:0;border:1px solid var(--gray-10);background:var(--gray-5);
+    display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;overflow:hidden;
+  }
+  .doc-preview img{width:100%;height:100%;object-fit:cover;}
+  .doc-preview .file-icon{width:52px;height:52px;color:var(--primary);}
+  .doc-preview .ext-label{font-size:11px;font-weight:700;color:#fff;background:var(--primary-vivid);padding:2px 10px;border-radius:3px;letter-spacing:0.5px;}
+
+  .receipt-details{flex:1;min-width:220px;}
+  .receipt-details dl{margin:0;display:grid;grid-template-columns:120px 1fr;row-gap:10px;column-gap:10px;font-size:13.5px;}
+  .receipt-details dt{color:var(--gray-50);font-weight:600;}
+  .receipt-details dd{margin:0;color:var(--ink);font-weight:500;}
+
+  .next-steps{text-align:left;margin-top:34px;background:var(--accent-cool-lighter);border-left:4px solid var(--accent-cool);padding:18px 22px;}
+  .next-steps h4{margin:0 0 10px;color:var(--primary-darker);font-size:14.5px;}
+  .next-steps ol{margin:0;padding-left:20px;font-size:13.5px;color:var(--gray-70);line-height:1.8;}
+
+  .actions{margin-top:30px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .btn{display:inline-block;padding:12px 28px;border-radius:3px;font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;border:none;font-family:'Public Sans',sans-serif;}
+  .btn-primary{background:var(--primary-vivid);color:#fff;}
+  .btn-primary:hover{background:var(--primary-darker);}
+  .btn-secondary{background:#fff;color:var(--primary-darker);border:2px solid var(--primary-darker);}
+  .btn-secondary:hover{background:var(--gray-5);}
+
+  .empty-state{font-size:14.5px;color:var(--gray-70);padding:30px;border:1px dashed var(--gray-30);}
+
+  footer.site-footer{background:var(--primary-darker);color:#fff;margin-top:40px;}
+  .footer-bottom{padding:16px;text-align:center;font-size:12px;color:var(--primary-light);}
+
+  @media (max-width:560px){
+    .receipt-body{flex-direction:column;align-items:center;text-align:center;}
+    .receipt-details dl{grid-template-columns:1fr;text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<div class="gov-banner">
+  <div class="gov-banner-inner">
+    <svg class="flag-icon" viewBox="0 0 16 11" xmlns="http://www.w3.org/2000/svg">
+      <rect width="16" height="11" fill="#b31942"/><rect y="0.85" width="16" height="0.85" fill="#fff"/>
+      <rect y="2.5" width="16" height="0.85" fill="#fff"/><rect y="4.2" width="16" height="0.85" fill="#fff"/>
+      <rect y="5.9" width="16" height="0.85" fill="#fff"/><rect y="7.6" width="16" height="0.85" fill="#fff"/>
+      <rect y="9.3" width="16" height="0.85" fill="#fff"/><rect width="7" height="5.9" fill="#0a3161"/>
+    </svg>
+    <span>An official website of the United States government — <strong>SEC.gov</strong></span>
+  </div>
+</div>
+<a href="confirmation.html" class="logo-link">
+        <img src="sec-logo-2x.png" alt="SEC Logo" class="site-logo">
+    </a>
+</header>
+      </div>
+    </div>
+  </div>
+  <nav class="primary-nav">
+    <div class="primary-nav-inner">
+      <a href="index.html" class="active">Secure Upload Portal</a>
+      <a href="about.html">About the SEC</a>
+      <a href="regulations.html">Regulations</a>
+      <a href="enforcement.html">Enforcement</a>
+      <a href="investor-education.html">Investor Education</a>
+      <a href="newsroom.html">Newsroom</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </nav>
+</header>
+
+<main id="mainContent">
+  <!-- Populated by JS -->
+</main>
+
+<footer class="site-footer">
+  <div class="footer-bottom">
+    &copy; 2026 Securities and Exchange Commission. 
+  </div>
+</footer>
+
+<script>
+  const FILE_ICONS = {
+    DEFAULT: `<svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h8"/></svg>`,
+    PDF: `<svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><text x="12" y="17" font-size="6" text-anchor="middle" fill="currentColor" stroke="none">PDF</text></svg>`,
+    DOC: `<svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><text x="12" y="17" font-size="5" text-anchor="middle" fill="currentColor" stroke="none">DOC</text></svg>`,
+    DOCX: `<svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><text x="12" y="17" font-size="4.5" text-anchor="middle" fill="currentColor" stroke="none">DOCX</text></svg>`,
+    XLS: `<svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><text x="12" y="17" font-size="5" text-anchor="middle" fill="currentColor" stroke="none">XLS</text></svg>`,
+    XLSX: `<svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><text x="12" y="17" font-size="4.5" text-anchor="middle" fill="currentColor" stroke="none">XLSX</text></svg>`,
+    PNG: `<svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><rect x="8" y="12" width="8" height="6" rx="1"/><circle cx="10" cy="10" r="1.3"/></svg>`,
+    JPG: `<svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><rect x="8" y="12" width="8" height="6" rx="1"/><circle cx="10" cy="10" r="1.3"/></svg>`,
+    JPEG: `<svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><rect x="8" y="12" width="8" height="6" rx="1"/><circle cx="10" cy="10" r="1.3"/></svg>`,
+    GIF: `<svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><rect x="8" y="12" width="8" height="6" rx="1"/><circle cx="10" cy="10" r="1.3"/></svg>`,
+    TIFF: `<svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><rect x="8" y="12" width="8" height="6" rx="1"/><circle cx="10" cy="10" r="1.3"/></svg>`,
+    TXT: `<svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 11h8M8 15h8"/></svg>`
+  };
+
+  function renderContent() {
+    let data = null;
+    try{ data = JSON.parse(localStorage.getItem('secSubmission')); }catch(e){ data = null; }
+
+    if (!data){
+      main.innerHTML = `
+        <div class="success-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        </div>
+        <h2>No Recent Submission Found</h2>
+        <p class="sub">We couldn't find a recent submission record in this browser session. Please return to the Secure Upload Portal to submit your documents.</p>
+        <div class="actions">
+          <a href="index.html" class="btn btn-primary">Go to Upload Portal</a>
+        </div>
+      `;
+      return;
+    }
+
+    const previewHTML = data.isImage && data.thumb
+      ? `<img src="${data.thumb}" alt="Preview of submitted document">`
+      : `${FILE_ICONS[data.fileExt] || FILE_ICONS.DEFAULT}<span class="ext-label">${data.fileExt || 'FILE'}</span>`;
+
+    main.innerHTML = `
+      <div class="success-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      </div>
+      <h2>Submission Received Successfully</h2>
+      <p class="sub">Thank you, ${data.name || 'Applicant'}. Your documentation has been securely transmitted to the SEC for review.</p>
+
+      <div class="receipt-card">
+        <div class="receipt-head">
+          <h3>Submission Receipt</h3>
+          <span class="ref">${data.ref}</span>
+        </div>
+        <div class="receipt-body">
+          <div class="doc-preview">${previewHTML}</div>
+          <div class="receipt-details">
+            <dl>
+              <dt>Applicant</dt><dd>${data.name || '—'}</dd>
+              <dt>Document Type</dt><dd>${data.docType || '—'}</dd>
+              <dt>File Name</dt><dd>${data.fileName || '—'}</dd>
+              <dt>File Size</dt><dd>${data.fileSize || '—'}</dd>
+              <dt>Files Attached</dt><dd>${data.fileCount || 1}</dd>
+              <dt>Submitted</dt><dd>${data.submittedAt || '—'}</dd>
+              <dt>Contact Email</dt><dd>${data.email || '—'}</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+
+      <div class="next-steps">
+        <h4>What Happens Next?</h4>
+        <ol>
+          <li>You will receive an email confirmation at <strong>${data.email || 'your registered address'}</strong> within 15 minutes.</li>
+          <li>A compliance reviewer will examine your documents within 3–5 business days.</li>
+          <li>If additional information is required, our office will contact you directly using the information provided.</li>
+          <li>Save your reference number <strong>${data.ref}</strong> for all future correspondence regarding this submission.</li>
+        </ol>
+      </div>
+
+      <div class="actions">
+        <a href="index.html" class="btn btn-secondary">Submit Another Document</a>
+        <a href="contact.html" class="btn btn-primary">Contact Support</a>
+      </div>
+    `;
+  }
+
+  renderContent();
+</script>
+
+</body>
+</html>

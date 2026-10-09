@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Documentation Submission Portal | Securities and Exchange Commission</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&family=Merriweather:wght@700;900&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --us-flag-blue: #112e51;
+      --ink: #1b1b1b;
+      --primary-darker: #162e51;
+      --primary-dark: #205493;
+      --primary: #005ea2;
+      --primary-vivid: #0050d8;
+      --primary-light: #aecbe3;
+      --primary-lighter: #e1eef9;
+      --accent-cool: #00bde3;
+      --accent-cool-lighter: #e7fafe;
+      --gray-5: #f0f0f0;
+      --gray-10: #e6e6e6;
+      --gray-30: #adadad;
+      --gray-50: #757575;
+      --gray-70: #454545;
+      --gold: #ffbe2e;
+      --success: #00a91c;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Public Sans', Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--white);
+    }
+
+    a {
+      color: var(--primary);
+    }
+
+    h1,
+    .h2,
+    .h3 {
+      font-family: 'Merriweather', Georgia, serif;
+
+    }
+
+    /* ========= OFFICIAL GOV BANNER ========= */
+    .gov-banner {
+      background: #f0f0f0;
+      border-bottom: 1px solid #d8d8d8;
+      font-size: 8px;
+      padding: 3px 0;
+    }
+
+    .gov-banner-inner {
+      max-width: 150px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .gov-banner img.flag-icon {
+      background: #205493;
+      border: none;
+      color: #ffffff;
+      font-size: 10px;
+      font-weight: 700;
+      text-decoration: underline;
+      cursor: pointer;
+      padding: 4px 7px;
+      border-radius: 2px;
+      flex-shrink: 0;
+
+    }
+
+
+    /* ========= HEADER ========= */
+   .site-logo {width: 150px;height: auto;} 
+
+   .header-search {
+        display: flex;
+        align-items: stretch;
+        border: 2px solid var(--primary-darker);
+        border-radius: 3px;
+        overflow: hidden;
+      }
+
+      .header-search input {
+        width: 190px;
+        border: none;
+        padding: 10px 12px;
+        font-size: 13px;
+        font-family: 'Public Sans', sans-serif;
+      }
+
+      .header-search input:focus {
+        outline: 2px solid #005ea2;
+        outline-offset: -2px;
+      }
+
+      .header-search button {
+        background: #162e51;
+        border: none;
+        color: #ffffff;
+        padding: 0 14px;
+        cursor: pointer;
+      }
+
+      .header-search svg {
+        width: 16px;
+        height: 16px;
+      }
+
+
+      @media (max-width: 600px) {}
+
+
+
+      .header-search input {
+        width: 100%;
+        min-width: 0;
+      }
+
+      /* ========= PRIMARY NAV ========= */
+      nav.primary-nav {
+        background: var(--primary-darker);
+      }
+
+      .primary-nav-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 16px;
+      }
+
+      .primary-nav-inner a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 13.5px;
+        font-weight: 600;
+        padding: 14px 16px;
+        display: inline-block;
+        border-bottom: 3px solid transparent;
+      }
+
+      .primary-nav-inner a:hover {
+        background: var(--primary-dark);
+      }
+
+      .primary-nav-inner a.active {
+        border-bottom: 3px solid var(--gold);
+        background: var(--primary-dark);
+      }
+
+      /* ========= HERO ========= */
+      .hero {
+        background: linear-gradient(135deg, var(--primary-darker) 0%, var(--primary-dark) 100%);
+        color: #fff;
+        padding: 52px 16px 60px;
+        text-align: center;
+        position: relative;
+      }
+
+      .hero-inner {
+        max-width: 760px;
+        margin: 0 auto;
+      }
+
+      .hero h2 {
+        font-size: 32px;
+        margin: 0 0 14px;
+        line-height: 1.3;
+      }
+
+      .hero p {
+        font-size: 16px;
+        color: var(--primary-lighter);
+        margin: 0 auto 26px;
+        max-width: 600px;
+        font-family: 'Public Sans', sans-serif;
+      }
+
+      .hero-cta {
+        display: inline-block;
+        background: var(--gold);
+        color: var(--primary-darker);
+        font-weight: 700;
+        padding: 12px 30px;
+        border-radius: 3px;
+        text-decoration: none;
+        font-size: 14.5px;
+        letter-spacing: 0.2px;
+      }
+
+      .hero-cta:hover {
+        background: #ffd166;
+      }
+
+      .quick-links {
+        max-width: 1100px;
+        margin: -30px auto 0;
+        padding: 0 16px;
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .quick-link-card {
+        background: #fff;
+        border-top: 4px solid var(--primary);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+        border-radius: 4px;
+        padding: 18px 18px 20px;
+      }
+
+      .quick-link-card h3 {
+        font-size: 14.5px;
+        color: var(--primary-darker);
+        margin: 0 0 6px;
+      }
+
+      .quick-link-card p {
+        font-size: 12.5px;
+        color: var(--gray-70);
+        margin: 0;
+        font-family: 'Public Sans', sans-serif;
+      }
+
+      /* ========= MAIN ========= */
+      .main {
+        max-width: 800px;
+        margin: 60px auto 50px;
+        padding: 0 20px;
+      }
+
+      .page-title {
+        margin-bottom: 10px;
+        border-bottom: 4px solid var(--primary);
+        padding-bottom: 16px;
+      }
+
+      .page-title h2 {
+        font-size: 26px;
+        margin: 0 0 8px;
+        color: var(--primary-darker);
+      }
+
+      .page-title p {
+        margin: 0;
+        color: var(--gray-70);
+        font-size: 14.5px;
+        font-family: 'Public Sans', sans-serif;
+      }
+
+      .security-banner {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--accent-cool-lighter);
+        border-left: 4px solid var(--accent-cool);
+        color: var(--primary-darker);
+        padding: 12px 16px;
+        font-size: 13px;
+        margin: 22px 0 0;
+      }
+
+      .security-banner svg {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+        color: var(--primary);
+      }
+
+      form.upload-form {
+        background: #fff;
+        border: 1px solid var(--gray-10);
+        padding: 36px 0 0;
+        margin-top: 30px;
+      }
+
+      .fieldset {
+        border: none;
+        padding: 0;
+        margin: 0 0 34px;
+      }
+
+      .legend {
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--primary-darker);
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid var(--gray-10);
+        width: 100%;
+        font-family: 'Merriweather', serif;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--ink);
+        margin-bottom: 6px;
+      }
+
+      .form-group .required {
+        color: #b50909;
+        margin-left: 3px;
+      }
+
+      .form-group input[type="text"],
+      .form-group input[type="email"],
+      .form-group input[type="tel"],
+      .form-group input[type="date"],
+      .form-group select {
+        width: 100%;
+        max-width: 480px;
+        padding: 10px 12px;
+        border: 1px solid var(--gray-50);
+        border-radius: 0;
+        font-size: 14.5px;
+        color: var(--ink);
+        background: #fff;
+        font-family: 'Public Sans', sans-serif;
+        transition: box-shadow 0.15s, border-color 0.15s;
+      }
+
+      .form-group input:focus,
+      .form-group select:focus {
+        outline: 3px solid var(--primary-vivid);
+        outline-offset: 0;
+        border-color: var(--primary-vivid);
+      }
+
+
+      .hint {
+        font-size: 12.5px;
+        color: var(--gray-50);
+        margin-top: 4px;
+      }
+
+      /* UPLOAD BOX */
+      .upload-box {
+        border: 2px dashed var(--primary-light);
+        background: var(--primary-lighter);
+        padding: 34px 20px;
+        text-align: center;
+        cursor: pointer;
+        transition: background 0.2s, border-color 0.2s;
+        position: relative;
+      }
+
+      .upload-box:hover,
+      .upload-box.dragover {
+        background: #d2e6f8;
+        border-color: var(--primary);
+      }
+
+      .upload-box input[type="file"] {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+      }
+
+      .upload-icon {
+        width: 44px;
+        height: 44px;
+        margin: 0 auto 12px;
+        color: var(--primary);
+      }
+
+      .upload-box p.title {
+        margin: 0 0 4px;
+        font-weight: 700;
+        color: var(--primary-darker);
+        font-size: 14.5px;
+      }
+
+      .upload-box p.sub {
+        margin: 0;
+        font-size: 12.5px;
+        color: var(--gray-70);
+      }
+
+      #file-list {
+        margin-top: 14px;
+        text-align: left;
+      }
+
+      .file-chip {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #fff;
+        border: 1px solid var(--gray-10);
+        padding: 9px 12px;
+        font-size: 13px;
+        color: var(--ink);
+        margin-bottom: 8px;
+      }
+
+      .file-chip span.name {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .file-chip button {
+        background: none;
+        border: none;
+        color: #b50909;
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .submit-area {
+        margin-top: 10px;
+        padding-bottom: 40px;
+      }
+
+      button.submit-btn {
+        background: var(--primary-vivid);
+        color: #fff;
+        border: none;
+        padding: 13px 38px;
+        font-size: 15px;
+        font-weight: 700;
+        border-radius: 3px;
+        cursor: pointer;
+        letter-spacing: 0.2px;
+        font-family: 'Public Sans', sans-serif;
+      }
+
+      button.submit-btn:hover {
+        background: var(--primary-darker);
+      }
+
+      .consent {
+        font-size: 13px;
+        color: var(--gray-70);
+        margin: 16px 0 22px;
+        max-width: 600px;
+        display: flex;
+        gap: 8px;
+        align-items: flex-start;
+      }
+
+      .consent input {
+        margin-top: 4px;
+      }
+
+      .confirmation {
+        display: none;
+        background: #ecf3ec;
+        border-left: 4px solid var(--success);
+        color: #164f1d;
+        padding: 16px 20px;
+        font-size: 14px;
+        margin-top: 20px;
+        font-weight: 600;
+      }
+
+      /* ========= FOOTER ========= */
+      footer.site-footer {
+        background: var(--primary-darker);
+        color: #fff;
+        margin-top: 40px;
+      }
+
+      .footer-top {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 40px 16px;
+        display: grid;
+        grid-template-columns: 1.3fr 1fr 1fr 1fr;
+        gap: 24px;
+      }
+
+      .footer-brand {
+        display: flex;
+        align-items: flex-start;
+        gap: 36px;
+      }
+
+      .footer-brand .site-logo {
+        display: block;
+        width: 150px;
+        height: auto;
+        object-fit: contain;
+        flex-shrink: 0;
+      }
+
+      .footer-brand-info h2 {
+        margin: 0 0 20px;
+        font-family: Georgia, serif;
+        font-size: 30px;
+        line-height: 1.15;
+        font-weight: 700;
+      }
+
+
+      .footer-brand-info p {
+        margin: 0 0 10px;
+        font-size: 20px;
+        line-height: 1.5;
+      }
+
+      @media (max-width: 600px) {
+        .footer-brand {
+          gap: 18px;
+        }
+
+        .footer-logo {
+          width: 44px;
+          height: 50px;
+        }
+
+        .footer-brand-info h2 {
+          font-size: 22px;
+        }
+
+        .footer-brand-info p {
+          font-size: 16px;
+        }
+      }
+
+      .footer-col h5 {
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin: 0 0 14px;
+        color: var(--gold);
+      }
+
+      .footer-col ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .footer-col li {
+        margin-bottom: 10px;
+      }
+
+      .footer-col a {
+        color: #fff;
+        font-size: 13px;
+        text-decoration: none;
+      }
+
+      .footer-col a:hover {
+        text-decoration: underline;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 16px;
+        text-align: center;
+        font-size: 12px;
+        color: var(--primary-light);
+      }
+
+      @media (max-width:760px) {
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+
+        .quick-links {
+          grid-template-columns: 1fr;
+          margin-top: 20px;
+        }
+
+        .footer-top {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .header-search input {
+          width: 130px;
+        }
+      }
+
+      @media (max-width:500px) {
+        .footer-top {
+          grid-template-columns: 1fr;
+        }
+      }
+  </style>
+</head>
+
+<body>
+
+  <!-- OFFICIAL GOV-STYLE BANNER -->
+  <div class="gov-banner">
+    <div class="gov-banner-inner">
+      <svg class="flag-icon" viewBox="0 0 16 11" xmlns="http://www.w3.org/2000/svg">
+        <rect width="16" height="11" fill="#b31942" />
+        <rect y="0.85" width="16" height="0.85" fill="#fff" />
+        <rect y="2.5" width="16" height="0.85" fill="#fff" />
+        <rect y="4.2" width="16" height="0.85" fill="#fff" />
+        <rect y="5.9" width="16" height="0.85" fill="#fff" />
+        <rect y="7.6" width="16" height="0.85" fill="#fff" />
+        <rect y="9.3" width="16" height="0.85" fill="#fff" />
+        <rect width="7" height="5.9" fill="#0a3161" />
+      </svg>
+      <span>An official website of the United States government — <strong>SEC.gov</strong></span>
+    </div>
+  </div>
+  </div>
+
+  <!-- HEADER -->
+<header>
+   
+    <a href="index.html" class="logo-link">
+        <img src="sec-logo-2x.png" alt="SEC Logo" class="site-logo">
+    </a>
+</header>
+
+
+
+
+  <form class="header-search" action="search.html" method="get">
+
+    <input type="text" name="q" placeholder="Search SEC.gov" aria-label="Search SEC.gov">
+
+    <button type="submit" aria-label="Search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+
+        <circle cx="11" cy="11" r="7"></circle>
+        <path d="m21 21-4.3-4.3"></path>
+      </svg>
+    </button>
+  </form>
+  </div>
+  </header>
+
+
+  <!-- NAVIGATION-->
+  <nav class="primary-nav">
+    <div class="primary-nav-inner">
+      <a href="index.html" class="active">Secure Documentation Submission Portal</a>
+      <a href="about.html">About the SEC</a>
+      <a href="regulations.html">Regulations</a>
+      <a href="enforcement.html">Enforcement</a>
+      <a href="investor-education.html">Investor Education</a>
+      <a href="newsroom.html">Newsroom</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h2>We protect the public through secure, verified document submission.</h2>
+      <p>The Secure Documentation Submission Portal allows individuals and institutions to submit required regulatory
+        documentation directly and confidentially to the Securities and Exchange Commission.</p>
+      <a href="#uploadForm" class="hero-cta">Begin Your Submission</a>
+    </div>
+  </section>
+
+  <div class="quick-links">
+    <div class="quick-link-card">
+      <h3>🔒 Encrypted Submission</h3>
+      <p>All documents are transmitted and stored using federally compliant encryption standards.</p>
+    </div>
+    <div class="quick-link-card">
+      <h3>🕒 Fast Processing</h3>
+      <p>Submissions are reviewed by our compliance office within 3–5 business days.</p>
+    </div>
+    <div class="quick-link-card">
+      <h3>📞 Need Help?</h3>
+      <p>Call our support line at 1-212-363-1010, Mon–Fri, 8:00 AM–6:00 PM EST.</p>
+    </div>
+  </div>
+
+  <main>
+    <div class="page-title">
+      <h2>Secure Documentation Submission Portal</h2>
+      <p>Please complete the form below and attach the requested documentation. All submissions are encrypted and
+        processed in accordance with federal data protection standards.</p>
+    </div>
+
+    <div class="security-banner">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+        <rect x="3" y="11" width="18" height="10" rx="2"></rect>
+        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+      </svg>
+      This connection and form are secured. Do not share your login credentials via this form.
+    </div>
+
+    <form class="upload-form" id="uploadForm">
+
+      <fieldset>
+        <legend>Applicant Information</legend>
+
+        <div class="form-group">
+          <label for="fullName">Full Legal Name<span class="required">*</span></label>
+          <input type="text" id="fullName" name="fullName" placeholder="e.g., Jordan A. Mitchell" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="dob">Date of Birth<span class="required">*</span></label>
+            <input type="date" id="dob" name="dob" required>
+          </div>
+          <div class="form-group">
+            <label for="refId">Reference / Case ID (if applicable)</label>
+            <input type="text" id="refId" name="refId" placeholder="e.g., SEC-2026-00123">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Contact Information</legend>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email Address<span class="required">*</span></label>
+            <input type="email" id="email" name="email" placeholder="name@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number<span class="required">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Mailing Address</label>
+          <input type="text" id="address" name="address" placeholder="Street, City, State, ZIP Code"
+            style="max-width:100%;">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Document Upload</legend>
+
+        <div class="form-group" style="margin-bottom:8px;">
+          <label for="docType">Document Type<span class="required">*</span></label>
+          <select id="docType" name="docType" required>
+            <option value="" disabled selected>Select a document type</option>
+            <option value="id">Government-Issued ID</option>
+            <option value="financial-statement">Financial Statement</option>
+            <option value="tax-form">Tax Form</option>
+            <option value="compliance-report">Compliance Report</option>
+            <option value="other">Other Supporting Document</option>
+          </select>
+        </div>
+
+        <label>Attach File(s)<span class="required">*</span></label>
+        <div class="upload-box" id="uploadBox">
+          <input type="file" id="fileInput" name="fileInput" multiple>
+          <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 16V4"></path>
+            <path d="m7 9 5-5 5 5"></path>
+            <path d="M20 16.5v2A2.5 2.5 0 0 1 17.5 21h-11A2.5 2.5 0 0 1 4 18.5v-2"></path>
+          </svg>
+          <p class="title">Click to upload or drag and drop</p>
+          <p class="sub">PDF, JPG, PNG, or DOCX — Max file size 10MB</p>
+        </div>
+        <div id="file-list"></div>
+        <div class="hint">Ensure all documents are clear, unedited, and current within the last 90 days.</div>
+      </fieldset>
+
+      <div class="consent">
+        <input type="checkbox" id="consent" required>
+        <label for="consent">I certify that the information and documents provided are true, accurate, and submitted
+          voluntarily for regulatory review purposes.</label>
+      </div>
+
+      <div class="submit-area">
+        <button type="submit" class="submit-btn">Submit Documents</button>
+      </div>
+
+      <div class="confirmation" id="confirmation">
+        ✔ Your submission has been received. A confirmation email will be sent shortly with your reference number.
+      </div>
+    </form>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand">
+          <img src="logo555.png" class="footer-logo" alt="Footer Logo">
+        </div>
+        <div>
+          <h4>Securities and Exchange Commission</h4>
+          <p>100 Pearl St. Suite 20-100<br>New York, N.Y. 10004-2616<br>212-366-1010 &nbsp;|&nbsp; compliance@sec.gov
+          </p>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>ABOUT THE SEC</h5>
+        <ul>
+          <li><a href="about.html#mission">Our Mission</a></li>
+          <li><a href="about.html#leadership">Leadership</a></li>
+          <li><a href="about.html#careers">Careers</a></li>
+          <li><a href="newsroom.html">Newsroom</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="regulations.html">Regulations</a></li>
+          <li><a href="filing-guidance.html">Filing Guidance</a></li>
+          <li><a href="investor-education.html">Investor Education</a></li>
+          <li><a href="faqs.html">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="accessibility.html">Accessibility</a></li>
+          <li><a href="foia.html">FOIA</a></li>
+          <li><a href="no-fear-act.html">No FEAR Act</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 SEC.gov All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a
+        href="accessibility.html">Accessibility</a></div>
+  </footer>
+
+  <script>
+    const bannerToggle = document.getElementById('bannerToggle');
+    const bannerDetail = document.getElementById('bannerDetail');
+    bannerToggle.addEventListener('click', () => {
+      const isOpen = bannerDetail.classList.toggle('open');
+      bannerToggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    const uploadBox = document.getElementById('uploadBox');
+    const fileInput = document.getElementById('fileInput');
+    const fileList = document.getElementById('file-list');
+    const form = document.getElementById('uploadForm');
+    const confirmation = document.getElementById('confirmation');
+
+    let selectedFiles = [];
+
+    function renderFiles() {
+      fileList.innerHTML = '';
+      selectedFiles.forEach((file, index) => {
+        const chip = document.createElement('div');
+        chip.className = 'file-chip';
+        chip.innerHTML = `
+        <span class="name">📄 ${file.name} (${(file.size / 1024).toFixed(1)} KB)</span>
+        <button type="button" data-index="${index}">Remove</button>
+      `;
+        fileList.appendChild(chip);
+      });
+
+      fileList.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const idx = parseInt(e.target.getAttribute('data-index'));
+          selectedFiles.splice(idx, 1);
+          renderFiles();
+        });
+      });
+    }
+
+    fileInput.addEventListener('change', (e) => {
+      selectedFiles = [...selectedFiles, ...Array.from(e.target.files)];
+      renderFiles();
+    });
+
+    ['dragenter', 'dragover'].forEach(evt => {
+      uploadBox.addEventListener(evt, (e) => {
+        e.preventDefault();
+        uploadBox.classList.add('dragover');
+      });
+    });
+
+    ['dragleave', 'drop'].forEach(evt => {
+      uploadBox.addEventListener(evt, (e) => {
+        e.preventDefault();
+        uploadBox.classList.remove('dragover');
+      });
+    });
+
+    uploadBox.addEventListener('drop', (e) => {
+      const dropped = Array.from(e.dataTransfer.files);
+      selectedFiles = [...selectedFiles, ...dropped];
+      renderFiles();
+    });
+
+    function generateRefNumber() {
+      const year = new Date().getFullYear();
+      const rand = Math.floor(100000 + Math.random() * 900000);
+      return `SEC-${year}-${rand}`;
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      if (selectedFiles.length === 0) {
+        alert('Please attach at least one document before submitting.');
+        return;
+      }
+
+      const submitBtn = form.querySelector('.submit-btn');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting…';
+
+      const docTypeSelect = document.getElementById('docType');
+      const docTypeLabel = docTypeSelect.options[docTypeSelect.selectedIndex].text;
+      const mainFile = selectedFiles[0];
+      const isImage = /^image\//.test(mainFile.type);
+
+      function finalize(thumbDataUrl) {
+        const payload = {
+          name: document.getElementById('fullName').value,
+          dob: document.getElementById('dob').value,
+          email: document.getElementById('email').value,
+          phone: document.getElementById('phone').value,
+          docType: docTypeLabel,
+          fileName: mainFile.name,
+          fileSize: (mainFile.size / 1024).toFixed(1) + ' KB',
+          fileExt: mainFile.name.split('.').pop().toUpperCase(),
+          fileCount: selectedFiles.length,
+          isImage: isImage,
+          thumb: thumbDataUrl || null,
+          ref: generateRefNumber(),
+          submittedAt: new Date().toLocaleString()
+        };
+        try {
+          localStorage.setItem('sec Submission', JSON.stringify(payload));
+        } catch (err) { /* storage unavailable, proceed anyway */ }
+        window.location.href = 'confirmation.html';
+      }
+
+      if (isImage) {
+        const reader = new FileReader();
+        reader.onload = () => finalize(reader.result);
+        reader.onerror = () => finalize(null);
+        reader.readAsDataURL(mainFile);
+      } else {
+        finalize(null);
+      }
+    });
+  </script>
+
+</body>
+
+</html>

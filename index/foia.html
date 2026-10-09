@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FOIA | Securities and Exchange Commission</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary-darker:#162e51; --primary-dark:#205493; --primary:#005ea2; --primary-vivid:#0050d8;
+    --primary-light:#aecbe3; --primary-lighter:#e1eef9; --accent-cool:#00bde3; --accent-cool-lighter:#e7fafe;
+    --gray-5:#f0f0f0; --gray-10:#e6e6e6; --gray-30:#adadad; --gray-50:#757575; --gray-70:#454545;
+    --gold:#ffbe2e; --success:#00a91c; --white:#ffffff; --ink:#1b1b1b;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'Public Sans',Arial,sans-serif;color:var(--ink);background:var(--white);}
+  a{color:var(--primary);}
+  h1,h2,h3{font-family:'Merriweather',Georgia,serif;}
+  .gov-banner{background:var(--gray-5);border-bottom:1px solid var(--gray-10);font-size:8px;padding:3px 0;}
+  .gov-banner-inner{max-width:150px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:8px;}
+  .gov-banner img.flag-icon{width:16px;height:11px;}
+ .site-logo {width: 150px;height: auto;} 
+
+  .header-search{display:flex;align-items:stretch;border:2px solid var(--primary-darker);border-radius:3px;overflow:hidden;}
+  .header-search input{border:none;padding:9px 12px;font-size:13.5px;width:190px;}
+  .header-search input:focus{outline:none;}
+  .header-search button{background:var(--primary-darker);border:none;color:#fff;padding:0 14px;cursor:pointer;}
+  .header-search svg{width:16px;height:16px;}
+  nav.primary-nav{background:var(--primary-darker);}
+  .primary-nav-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;padding:0 16px;}
+  .primary-nav-inner a{color:#fff;text-decoration:none;font-size:13.5px;font-weight:600;padding:14px 16px;display:inline-block;border-bottom:3px solid transparent;}
+  .primary-nav-inner a:hover{background:var(--primary-dark);}
+  .primary-nav-inner a.active{border-bottom:3px solid var(--gold);background:var(--primary-dark);}
+
+  .subpage-hero{background:linear-gradient(135deg, var(--primary-darker), var(--primary-dark));color:#fff;padding:40px 16px;}
+  .subpage-hero .inner{max-width:1100px;margin:0 auto;}
+  .subpage-hero .breadcrumb{font-size:13px;color:var(--primary-light);margin:0 0 10px;}
+  .subpage-hero .breadcrumb a{color:var(--primary-light);text-decoration:underline;}
+  .subpage-hero h2{font-size:30px;margin:0 0 10px;}
+  .subpage-hero p.lead{font-size:15px;color:var(--primary-lighter);max-width:700px;margin:0;}
+
+  .content-wrap{max-width:900px;margin:0 auto;padding:46px 20px 60px;}
+  .section-block{margin-bottom:34px;}
+  .section-block h3{color:var(--primary-darker);font-size:20px;border-bottom:3px solid var(--primary-lighter);padding-bottom:10px;margin-bottom:16px;}
+  .section-block p{font-size:14.5px;line-height:1.7;color:var(--gray-70);margin:0 0 14px;}
+  .section-block ul, .section-block ol{font-size:14.5px;line-height:1.8;color:var(--gray-70);padding-left:22px;}
+  .updated{font-size:12.5px;color:var(--gray-50);margin-bottom:28px;}
+
+  table.table-standard{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:10px;}
+  table.table-standard th{background:var(--primary-darker);color:#fff;text-align:left;padding:10px 12px;}
+  table.table-standard td{padding:10px 12px;border-bottom:1px solid var(--gray-10);color:var(--gray-70);}
+  table.table-standard tr:nth-child(even){background:var(--gray-5);}
+
+  .info-card{background:var(--primary-lighter);border-left:4px solid var(--primary);padding:18px 20px;}
+  .info-card h4{margin:0 0 8px;color:var(--primary-darker);font-size:15px;}
+  .info-card p{margin:0;font-size:13.5px;color:var(--gray-70);}
+
+  footer.site-footer{background:var(--primary-darker);color:#fff;margin-top:40px;}
+  .footer-top{max-width:1100px;margin:0 auto;padding:40px 16px;display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:24px;}
+  .footer-brand{display:flex;gap:12px;align-items:flex-start;}
+  .footer-brand .seal{width:46px;height:46px;}
+  .footer-brand h4{font-size:15px;margin:0 0 6px;}
+  .footer-brand p{font-size:12.5px;color:var(--primary-light);margin:0;line-height:1.6;}
+  .footer-col h5{font-size:13px;text-transform:uppercase;letter-spacing:0.5px;margin:0 0 14px;color:var(--gold);}
+  .footer-col ul{list-style:none;padding:0;margin:0;}
+  .footer-col li{margin-bottom:10px;}
+  .footer-col a{color:#fff;font-size:13px;text-decoration:none;}
+  .footer-col a:hover{text-decoration:underline;}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,0.15);padding:16px;text-align:center;font-size:12px;color:var(--primary-light);}
+
+  @media (max-width:760px){ .footer-top{grid-template-columns:1fr 1fr;} .header-search input{width:130px;} }
+  @media (max-width:500px){ .footer-top{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<div class="gov-banner">
+  <div class="gov-banner-inner">
+    <svg class="flag-icon" viewBox="0 0 16 11" xmlns="http://www.w3.org/2000/svg">
+      <rect width="16" height="11" fill="#b31942"/><rect y="0.85" width="16" height="0.85" fill="#fff"/>
+      <rect y="2.5" width="16" height="0.85" fill="#fff"/><rect y="4.2" width="16" height="0.85" fill="#fff"/>
+      <rect y="5.9" width="16" height="0.85" fill="#fff"/><rect y="7.6" width="16" height="0.85" fill="#fff"/>
+      <rect y="9.3" width="16" height="0.85" fill="#fff"/><rect width="7" height="5.9" fill="#0a3161"/>
+    </svg>
+    <span>An official website of the United States government — <strong>SEC.gov</strong></span>
+  </div>
+</div>
+<header>
+   
+    <a href="foia.html" class="logo-link">
+        <img src="sec-logo-2x.png" alt="SEC Logo" class="site-logo">
+    </a>
+</header>
+
+    </div>
+    <form class="header-search" action="search.html" method="get">
+      <input type="text" name="q" placeholder="Search SEC.gov" aria-label="Search">
+      <button type="submit" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg>
+      </button>
+    </form>
+  </div>
+  <nav class="primary-nav">
+    <div class="primary-nav-inner">
+      <a href="index.html">Secure Upload Portal</a>
+      <a href="about.html">About the SEC</a>
+      <a href="regulations.html">Regulations</a>
+      <a href="enforcement.html">Enforcement</a>
+      <a href="investor-education.html">Investor Education</a>
+      <a href="newsroom.html">Newsroom</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </nav>
+</header>
+
+<section class="subpage-hero">
+  <div class="inner">
+    <p class="breadcrumb"><a href="index.html">Home</a> / FOIA</p>
+    <h2>Freedom of Information Act (FOIA)</h2>
+    <p class="lead">How to request records from the Securities and Exchange Commission under FOIA.</p>
+  </div>
+</section>
+
+<main class="content-wrap">
+
+  <div class="section-block">
+    <h3>About FOIA</h3>
+    <p>The Freedom of Information Act (FOIA) gives the public the right to request access to records from federal agencies. The SEC is committed to transparency and processes FOIA requests in accordance with federal law.</p>
+  </div>
+
+  <div class="section-block">
+    <h3>How to Submit a FOIA Request</h3>
+    <ol>
+      <li>Submit your request in writing by email, mail, or through the Secure Upload Portal (select "Other Supporting Document" as the document type).</li>
+      <li>Clearly describe the records you are seeking with as much detail as possible.</li>
+      <li>Include your name and contact information so we can respond to your request.</li>
+      <li>Indicate whether you are requesting a fee waiver and the basis for the request, if applicable.</li>
+    </ol>
+  </div>
+
+  <div class="section-block">
+    <h3>Processing Times &amp; Fees</h3>
+    <table class="table-standard">
+      <thead><tr><th>Request Type</th><th>Typical Response Time</th><th>Fee</th></tr></thead>
+      <tbody>
+        <tr><td>Simple Request</td><td>20 business days</td><td>No charge under $25</td></tr>
+        <tr><td>Complex Request</td><td>30–60 business days</td><td>Duplication &amp; search fees may apply</td></tr>
+        <tr><td>Expedited Request</td><td>10 business days</td><td>Case-by-case basis</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-block">
+    <h3>FOIA Contact</h3>
+    <div class="info-card">
+      <h4>FOIA Officer</h4>
+      <p>Email: foia@sec.gov &nbsp;|&nbsp; Phone: 1-800-555-0195<br>123 Compliance Way, Suite 410, Washington, D.C. 20001</p>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+        <div class="footer-logo">
+        <img src="logo555.png" alt="SEC Logo" class="seal">
+      </div>
+      <div>
+        <h4>Securities and Exchange Commission</h4>
+        <p>100 Pearl St., Suite 20-100<br>New York, N.Y. 10004-2616
+<br>212-366-1010 &nbsp;|&nbsp; compliance@sec.gov</p>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>About</h5>
+      <ul>
+        <li><a href="about.html#mission">Our Mission</a></li>
+        <li><a href="about.html#leadership">Leadership</a></li>
+        <li><a href="about.html#careers">Careers</a></li>
+        <li><a href="newsroom.html">Newsroom</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Resources</h5>
+      <ul>
+        <li><a href="regulations.html">Regulations</a></li>
+        <li><a href="filing-guidance.html">Filing Guidance</a></li>
+        <li><a href="investor-education.html">Investor Education</a></li>
+        <li><a href="faqs.html">FAQs</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="accessibility.html">Accessibility</a></li>
+        <li><a href="foia.html">FOIA</a></li>
+        <li><a href="no-fear-act.html">No FEAR Act</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Securities and Exchange Commission. 
+  </div>
+</footer>
+
+</body>
+</html>

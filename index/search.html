@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search Results | Securities and Exchange Commission</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary-darker:#162e51; --primary-dark:#205493; --primary:#005ea2; --primary-vivid:#0050d8;
+    --primary-light:#aecbe3; --primary-lighter:#e1eef9; --accent-cool:#00bde3; --accent-cool-lighter:#e7fafe;
+    --gray-5:#f0f0f0; --gray-10:#e6e6e6; --gray-30:#adadad; --gray-50:#757575; --gray-70:#454545;
+    --gold:#ffbe2e; --success:#00a91c; --white:#ffffff; --ink:#1b1b1b;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'Public Sans',Arial,sans-serif;color:var(--ink);background:var(--white);}
+  a{color:var(--primary);}
+  h1,h2,h3{font-family:'Merriweather',Georgia,serif;}
+  .gov-banner{background:var(--gray-5);border-bottom:1px solid var(--gray-10);font-size:8px;padding:3px 0;}
+  .gov-banner-inner{max-width:150px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:8px;}
+  .gov-banner img.flag-icon{width:16px;height:11px;}
+ .site-logo {width: 150px;height: auto;} 
+  .header-search{display:flex;align-items:stretch;border:2px solid var(--primary-darker);border-radius:3px;overflow:hidden;}
+  .header-search input{border:none;padding:9px 12px;font-size:13.5px;width:190px;}
+  .header-search input:focus{outline:none;}
+  .header-search button{background:var(--primary-darker);border:none;color:#fff;padding:0 14px;cursor:pointer;}
+  .header-search svg{width:16px;height:16px;}
+  nav.primary-nav{background:var(--primary-darker);}
+  .primary-nav-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;padding:0 16px;}
+  .primary-nav-inner a{color:#fff;text-decoration:none;font-size:13.5px;font-weight:600;padding:14px 16px;display:inline-block;border-bottom:3px solid transparent;}
+  .primary-nav-inner a:hover{background:var(--primary-dark);}
+  .primary-nav-inner a.active{border-bottom:3px solid var(--gold);background:var(--primary-dark);}
+
+  .subpage-hero{background:linear-gradient(135deg, var(--primary-darker), var(--primary-dark));color:#fff;padding:40px 16px;}
+  .subpage-hero .inner{max-width:1100px;margin:0 auto;}
+  .subpage-hero .breadcrumb{font-size:13px;color:var(--primary-light);margin:0 0 10px;}
+  .subpage-hero .breadcrumb a{color:var(--primary-light);text-decoration:underline;}
+  .subpage-hero h2{font-size:28px;margin:0 0 10px;}
+  .subpage-hero p.lead{font-size:14.5px;color:var(--primary-lighter);max-width:700px;margin:0;}
+
+  .content-wrap{max-width:900px;margin:0 auto;padding:40px 20px 60px;}
+  .result-item{border-bottom:1px solid var(--gray-10);padding:16px 0;}
+  .result-item a.title{font-size:16px;font-weight:700;color:var(--primary);text-decoration:none;}
+  .result-item a.title:hover{text-decoration:underline;}
+  .result-item p{margin:6px 0 0;font-size:13.5px;color:var(--gray-70);}
+  .result-item .url{font-size:12px;color:var(--success);margin:2px 0 0;}
+
+  .no-results{border:1px dashed var(--gray-30);padding:24px;text-align:center;font-size:14px;color:var(--gray-70);}
+
+  footer.site-footer{background:var(--primary-darker);color:#fff;margin-top:40px;}
+  .footer-bottom{padding:16px;text-align:center;font-size:12px;color:var(--primary-light);}
+
+  @media (max-width:760px){ .header-search input{width:130px;} }
+</style>
+</head>
+<body>
+
+<div class="gov-banner">
+  <div class="gov-banner-inner">
+    <svg class="flag-icon" viewBox="0 0 16 11" xmlns="http://www.w3.org/2000/svg">
+      <rect width="16" height="11" fill="#b31942"/><rect y="0.85" width="16" height="0.85" fill="#fff"/>
+      <rect y="2.5" width="16" height="0.85" fill="#fff"/><rect y="4.2" width="16" height="0.85" fill="#fff"/>
+      <rect y="5.9" width="16" height="0.85" fill="#fff"/><rect y="7.6" width="16" height="0.85" fill="#fff"/>
+      <rect y="9.3" width="16" height="0.85" fill="#fff"/><rect width="7" height="5.9" fill="#0a3161"/>
+    </svg>
+    <span>An official website of the United States government — <strong>SEC.gov</strong></span>
+  </div>
+</div>
+
+<header>
+   
+    <a href="search.html" class="logo-link">
+        <img src="sec-logo-2x.png" alt="SEC Logo" class="site-logo">
+    </a>
+</header>
+
+    </div>
+    <form class="header-search" action="search.html" method="get">
+      <input type="text" name="q" id="searchInput" placeholder="Search SEC.gov" aria-label="Search">
+      <button type="submit" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg>
+      </button>
+    </form>
+  </div>
+  <nav class="primary-nav">
+    <div class="primary-nav-inner">
+      <a href="index.html">Secure Upload Portal</a>
+      <a href="about.html">About the SEC</a>
+      <a href="regulations.html">Regulations</a>
+      <a href="enforcement.html">Enforcement</a>
+      <a href="investor-education.html">Investor Education</a>
+      <a href="newsroom.html">Newsroom</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </nav>
+</header>
+
+<section class="subpage-hero">
+  <div class="inner">
+    <p class="breadcrumb"><a href="index.html">Home</a> / Search Results</p>
+    <h2 id="resultsHeading">Search Results</h2>
+    <p class="lead" id="resultsSub">Showing results across SEC.gov</p>
+  </div>
+</section>
+
+<main class="content-wrap" id="resultsWrap">
+  <!-- populated by JS -->
+</main>
+
+<footer class="site-footer">
+  <div class="footer-bottom">
+    &copy; 2026 Securities and Exchange Commission. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="accessibility.html">Accessibility</a>
+  </div>
+</footer>
+
+<script>
+  const PAGES = [
+    { title: "Secure Upload Portal", url: "index.html", keywords: "upload submit document file portal form name contact dob", desc: "Submit regulatory documents securely, including applicant and contact information." },
+    { title: "About the SEC", url: "about.html", keywords: "about mission leadership careers history commissioners", desc: "Learn about our mission, leadership team, and career opportunities." },
+    { title: "Regulations", url: "regulations.html", keywords: "regulations rules filing deadlines reporting requirements rulemaking", desc: "Explore the regulatory framework, filing deadlines, and the rulemaking process." },
+    { title: "Enforcement", url: "enforcement.html", keywords: "enforcement fraud whistleblower penalties investigations", desc: "Information on enforcement actions, whistleblower program, and penalties." },
+    { title: "Investor Education", url: "investor-education.html", keywords: "investor education fraud checklist glossary scam", desc: "Resources to help investors avoid fraud and make informed decisions." },
+    { title: "Newsroom", url: "newsroom.html", keywords: "news press releases media statements", desc: "Latest press releases and media contact information." },
+    { title: "Contact Us", url: "contact.html", keywords: "contact phone email address regional offices", desc: "Headquarters and regional office contact information." },
+    { title: "Filing Guidance", url: "filing-guidance.html", keywords: "filing guidance checklist how to submit steps", desc: "Step-by-step guidance for preparing and submitting documents." },
+    { title: "FAQs", url: "faqs.html", keywords: "faq questions answers help", desc: "Frequently asked questions about the upload portal and the SEC." },
+    { title: "Privacy Policy", url: "privacy-policy.html", keywords: "privacy policy data security information", desc: "How we collect, use, and protect your personal information." },
+    { title: "Accessibility", url: "accessibility.html", keywords: "accessibility section 508 wcag disability", desc: "Our commitment to digital accessibility for all users." },
+    { title: "FOIA", url: "foia.html", keywords: "foia freedom of information records request", desc: "How to submit a Freedom of Information Act request." },
+    { title: "No FEAR Act", url: "no-fear-act.html", keywords: "no fear act discrimination retaliation employee rights", desc: "Statement on employee antidiscrimination and whistleblower protections." }
+  ];
+
+  const params = new URLSearchParams(window.location.search);
+  const query = (params.get('q') || '').trim();
+  document.getElementById('searchInput').value = query;
+
+  const heading = document.getElementById('resultsHeading');
+  const sub = document.getElementById('resultsSub');
+  const wrap = document.getElementById('resultsWrap');
+
+  if (!query){
+    heading.textContent = "Search SEC.gov";
+    sub.textContent = "Enter a search term above to find pages across the site.";
+  } else {
+    heading.textContent = `Results for "${query}"`;
+  }
+
+  const matches = query
+    ? PAGES.filter(p => (p.title + ' ' + p.keywords + ' ' + p.desc).toLowerCase().includes(query.toLowerCase()))
+    : PAGES;
+
+  if (query) sub.textContent = `${matches.length} result${matches.length !== 1 ? 's' : ''} found`;
+
+  if (matches.length === 0){
+    wrap.innerHTML = `<div class="no-results">No results found for "${query}". Try a different term, or browse the navigation menu above.</div>`;
+  } else {
+    wrap.innerHTML = matches.map(p => `
+      <div class="result-item">
+        <a class="title" href="${p.url}">${p.title}</a>
+        <p class="url">SEC.gov/${p.url}</p>
+        <p>${p.desc}</p>
+      </div>
+    `).join('');
+  }
+</script>
+
+</body>
+</html>
